@@ -7,6 +7,29 @@
     margin-top: 10px;
     margin-bottom: 5px;
 }
-.main {
+.banner {
 
+}
+.songList {
+    width: 100%;
+    background: #d7ecf1;
+}
+.songList p {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font: 30px large bold;
+    color: #424b50;
+}
+
+.listContent {
+    height: 100%;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.image {
+    width:auto;
+    height:auto;
+    max-width: 200px;
+    max-height: 200px;
 }

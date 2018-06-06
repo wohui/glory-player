@@ -3,7 +3,7 @@ var  config ={
         user:"wokay",
         database:"wokay",
         password:"password",
-        host: '10.104.104.58',
+        host: 'hostip',
         port:5432,
         // 扩展属性
         max:20, // 连接池最大连接数
