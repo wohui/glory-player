@@ -11,7 +11,7 @@ const MainRouter = () => (
                 <Route exact path={"/"}  component={HomePage}></Route>
 
                 <Route  exact path="/top" component={TopPage}></Route>
-                <Route  exact path="/addCategory" component={AddCategory}></Route>
+                <Route  exact path="/userCenter" component={AddCategory}></Route>
                 <Route  exact path="*" component={Error404Page}></Route>
             </Switch>
 )
