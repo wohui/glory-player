@@ -14,22 +14,23 @@
     width: 100%;
     background: #d7ecf1;
 }
-.songList p {
+.tuijian-title {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 100%;
     font: 30px large bold;
     color: #424b50;
 }
 
 .listContent {
-    height: 100%;
-    margin-left: 200px;
-    margin-right: 200px;
+    display: flex;
+    justify-content: center;
 }
+
 .image {
     width:auto;
     height:auto;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 220px;
+    max-height: 220px;
 }
