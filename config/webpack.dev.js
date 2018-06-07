@@ -50,7 +50,7 @@ var config = {
     //设置devServer转发
     devServer: {
         host: '0.0.0.0',
-        port: 3002,
+        port: 3001,
         hot: true,
         inline: true,
         contentBase: path.resolve(projectRootPath, 'static/views'),//单页html位置
