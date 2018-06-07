@@ -33,7 +33,11 @@
     max-width: 240px;
     max-height: 240px;
 }
-.card-item-info {
+.card-item-name {
+    margin:0;
+    padding:0;
+}
+.card-item-count {
     margin:0;
     padding:0;
 }
