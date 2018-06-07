@@ -66,7 +66,7 @@ export default class HomePage extends React.Component {
                     </Layout.Col>
                 </Layout.Row>
                 <div className="songList">
-                    <p>Glory推荐</p>
+                    <p className="title">Glory推荐</p>
                     <div className="demo-3 medium">
                         <Carousel autoplay={false} arrow="always">
                             {
@@ -74,76 +74,40 @@ export default class HomePage extends React.Component {
                                     return (
                                         <Carousel.Item key={index}>
                                             <div className="listContent">
-                                                <Layout.Row>
-                                                    <Layout.Col span={ 4 } offset={ 0 } >
-                                                        <Card bodyStyle={{ padding: 0 }} className="image">
+                                                <Layout.Row gutter="20">
+                                                    <Layout.Col span={ 6 } offset={ 0 } >
+                                                        <Card bodyStyle={{ padding: 0 }}>
                                                             <img src={this.state.songListImages[0]} className="image"></img>
-                                                            <div style={{ padding: 14 }}>
-                                                                <span>好吃的汉堡</span>
-                                                                <div className="bottom clearfix">
-                                                                    <time className="time">2016-10-21 16:19</time>
-                                                                    <Button type="text" className="button">播放</Button>
-                                                                </div>
+                                                            <div>
+                                                                <p className="card-item-info">好吃的汉堡-试试速速速顶顶顶</p>
+                                                                <p className="card-item-info">播放量：300.2万</p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
-                                                    <Layout.Col span={ 4 } offset={ 0 }>
+                                                    <Layout.Col span={ 6 } offset={ 0 }>
                                                         <Card bodyStyle={{ padding: 0 }}>
                                                             <img src={this.state.songListImages[1]} className="image"></img>
-                                                            <div style={{ padding: 14 }}>
-                                                                <span>好吃的汉堡</span>
-                                                                <div className="bottom clearfix">
-                                                                    <time className="time">2016-10-21 16:19</time>
-                                                                    <Button type="text" className="button">播放</Button>
-                                                                </div>
+                                                            <div>
+                                                                <p className="card-item-info">好吃的汉堡-试试速速速顶顶顶</p>
+                                                                <p className="card-item-info">播放量：300.2万</p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
-                                                    <Layout.Col span={ 4 } offset={ 0 }>
+                                                    <Layout.Col span={ 6 } offset={ 0 }>
                                                         <Card bodyStyle={{ padding: 0 }}>
                                                             <img src={this.state.songListImages[2]} className="image"></img>
-                                                            <div style={{ padding: 14 }}>
-                                                                <span>好吃的汉堡</span>
-                                                                <div className="bottom clearfix">
-                                                                    <time className="time">2016-10-21 16:19</time>
-                                                                    <Button type="text" className="button">播放</Button>
-                                                                </div>
+                                                            <div>
+                                                                <p className="card-item-info">好吃的汉堡-试试速速速顶顶顶</p>
+                                                                <p className="card-item-info">播放量：300.2万</p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
-                                                    <Layout.Col span={ 4 } offset={ 0 }>
-                                                        <Card bodyStyle={{ padding: 0 }}>
-                                                            <img src={this.state.songListImages[1]} className="image"></img>
-                                                            <div style={{ padding: 14 }}>
-                                                                <span>好吃的汉堡</span>
-                                                                <div className="bottom clearfix">
-                                                                    <time className="time">2016-10-21 16:19</time>
-                                                                    <Button type="text" className="button">播放</Button>
-                                                                </div>
-                                                            </div>
-                                                        </Card>
-                                                    </Layout.Col>
-                                                    <Layout.Col span={ 4 } offset={ 0 }>
-                                                        <Card bodyStyle={{ padding: 0 }}>
-                                                            <img  src={this.state.songListImages[0]} className="image"></img>
-                                                            <div style={{ padding: 14 }}>
-                                                                <span>好吃的汉堡</span>
-                                                                <div className="bottom clearfix">
-                                                                    <time className="time">2016-10-21 16:19</time>
-                                                                    <Button type="text" className="button">播放</Button>
-                                                                </div>
-                                                            </div>
-                                                        </Card>
-                                                    </Layout.Col>
-                                                    <Layout.Col span={ 4 } offset={ 0 }>
+                                                    <Layout.Col span={ 6 } offset={ 0 }>
                                                         <Card bodyStyle={{ padding: 0 }}>
                                                             <img src={this.state.songListImages[0]} className="image"></img>
-                                                            <div style={{ padding: 14 }}>
-                                                                <span>好吃的汉堡</span>
-                                                                <div className="bottom clearfix">
-                                                                    <time className="time">2016-10-21 16:19</time>
-                                                                    <Button type="text" className="button">播放</Button>
-                                                                </div>
+                                                            <div>
+                                                                <p className="card-item-info">好吃的汉堡-试试速速速顶顶顶</p>
+                                                                <p className="card-item-info">播放量：300.2万</p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
