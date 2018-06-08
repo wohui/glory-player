@@ -52,6 +52,6 @@ app.use(views(path.join(__dirname, '../static/views'), {
 app.use(routers.routes()).use(routers.allowedMethods())
 
 // 监听启动端口
-app.listen(3002)
-console.log(`the server is start at port 3002`)
+app.listen(3001)
+console.log(`the server is start at port 3001`)
 
