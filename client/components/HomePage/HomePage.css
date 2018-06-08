@@ -27,17 +27,26 @@
     justify-content: center;
     height: 100%;
 }
+.card {
+    height: 400px;
+}
 .image {
     width:auto;
     height:auto;
-    max-width: 240px;
-    max-height: 240px;
+    max-width: 270px;
+    max-height: 270px;
 }
 .card-item-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1';
     margin:0;
     padding:0;
 }
 .card-item-count {
+    font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1';
+    color: #999;
     margin:0;
     padding:0;
 }

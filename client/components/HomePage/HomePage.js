@@ -431,8 +431,8 @@ export default class HomePage extends React.Component {
                 </Layout.Row>
                 <div className="songList">
                     <p className="title">Glory推荐</p>
-                    <div className="demo-3 medium">
-                        <Carousel autoplay={false} arrow="always">
+                    <div>
+                        <Carousel autoplay={false} arrow="always" height="360px">
                             {
                                 [1, 2].map((item, index) => {
                                     return (
@@ -441,41 +441,49 @@ export default class HomePage extends React.Component {
                                                 <Layout.Row gutter="20">
                                                     <Layout.Col span={6} offset={0}>
                                                         <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.songListImages[0]}
+                                                            <img src={this.state.playlists[index * 4].coverImgUrl}
                                                                  className="image"></img>
                                                             <div>
-                                                                <p className="card-item-name">{this.state.playlists[index].name}</p>
-                                                                <p className="card-item-count">播放量：{this.state.playlists[index].playCount / 10000} 万 </p>
+                                                                <p className="card-item-name">{this.state.playlists[index * 4].name}</p>
+                                                                <p className="card-item-count">
+                                                                    播放量：{this.state.playlists[index * 4].playCount / 10000}
+                                                                    万 </p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
                                                     <Layout.Col span={6} offset={0}>
                                                         <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.songListImages[1]}
+                                                            <img src={this.state.playlists[index * 4 + 1].coverImgUrl}
                                                                  className="image"></img>
                                                             <div>
-                                                                <p className="card-item-name">{this.state.playlists[index+1].name}</p>
-                                                                <p className="card-item-count">播放量：{this.state.playlists[index].playCount / 10000} 万 </p>
+                                                                <p className="card-item-name">{this.state.playlists[index * 4 + 1].name}</p>
+                                                                <p className="card-item-count">
+                                                                    播放量：{this.state.playlists[index * 4 + 1].playCount / 10000}
+                                                                    万 </p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
                                                     <Layout.Col span={6} offset={0}>
                                                         <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.songListImages[2]}
+                                                            <img src={this.state.playlists[index * 4 + 2].coverImgUrl}
                                                                  className="image"></img>
                                                             <div>
-                                                                <p className="card-item-name">{this.state.playlists[index+2].name}</p>
-                                                                <p className="card-item-count">播放量：{this.state.playlists[index].playCount / 10000} 万 </p>
+                                                                <p className="card-item-name">{this.state.playlists[index * 4 + 2].name}</p>
+                                                                <p className="card-item-count">
+                                                                    播放量：{this.state.playlists[index * 4 + 2].playCount / 10000}
+                                                                    万 </p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
                                                     <Layout.Col span={6} offset={0}>
                                                         <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.songListImages[0]}
+                                                            <img src={this.state.playlists[index * 4 + 3].coverImgUrl}
                                                                  className="image"></img>
                                                             <div>
-                                                                <p className="card-item-name">{this.state.playlists[index+3].name}</p>
-                                                                <p className="card-item-count">播放量：{this.state.playlists[index].playCount / 10000} 万 </p>
+                                                                <p className="card-item-name">{this.state.playlists[index * 4 + 3].name}</p>
+                                                                <p className="card-item-count">
+                                                                    播放量：{this.state.playlists[index * 4 + 3].playCount / 10000}
+                                                                    万 </p>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
