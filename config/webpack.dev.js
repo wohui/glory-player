@@ -5,7 +5,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var projectRootPath = path.resolve(__dirname, '..')
 
 var config = {
-    mode: "development",
+    mode: "production",
+    devtool:false,
     entry: {'index': './client/app.js'},
     //生成文件路径
     output: {
