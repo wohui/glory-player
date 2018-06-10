@@ -1,0 +1,8 @@
+
+module.exports = {
+    // 端口
+    port: 3001,
+    // api地址
+    api: 'http://218.17.162.184:11043/',
+    env: process.env.NODE_ENV
+}

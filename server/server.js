@@ -44,7 +44,7 @@ app.use(hotMiddleware(compiler,{
 }))
 
 // 加载模板引擎
-app.use(views(path.join(__dirname, '../static/views'), {
+app.use(views(path.join(__dirname, '../dist/index'), {
     extension: 'html'
 }))
 // 初始化路由中间件
