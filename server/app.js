@@ -6,7 +6,7 @@ const bodyParser = require('koa-bodyparser')
 const koaLogger = require('koa-logger')
 const views = require('koa-views')
 const convert = require('koa-convert')
-// const dev = require('./build/dev')
+const dev = require('../build/dev')
 
 // 配置文件
 const config = require('./config/config-server')
@@ -16,10 +16,10 @@ const routers = require('./routers/index')
 
 const app = new Koa()
 
-// // 开发模式
-// if (process.env.NODE_ENV === 'development') {
-//   dev(app)
-// }
+// 开发模式
+if (process.env.NODE_ENV === 'development') {
+  dev(app)
+}
 
 // 配置控制台日志中间件
 app.use(koaLogger())

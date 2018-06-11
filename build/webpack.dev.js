@@ -5,8 +5,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 var projectRootPath = path.resolve(__dirname, '..')
 
 var config = {
-    mode: "production",
-    devtool: false,
     entry: {
         'vendor': ['react','react-router-dom','element-react', 'element-theme-default'],
         'index': './client/app.js'
