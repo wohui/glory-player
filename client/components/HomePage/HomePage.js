@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {Card, Carousel, Layout} from 'element-react'
 
 import 'element-theme-default' //导入element-ui默认主题
@@ -441,8 +442,11 @@ export default class HomePage extends React.Component {
                                                 <Layout.Row gutter="20">
                                                     <Layout.Col span={6} offset={0}>
                                                         <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.playlists[index * 4].coverImgUrl}
-                                                                 className="image"></img>
+                                                            <div className="card-img">
+                                                                <img src={this.state.playlists[index * 4].coverImgUrl}
+                                                                     className="image"/>
+                                                                <Link to="/"></Link>
+                                                            </div>
                                                             <div>
                                                                 <p className="card-item-name">{this.state.playlists[index * 4].name}</p>
                                                                 <div className="count-info">
