@@ -445,9 +445,11 @@ export default class HomePage extends React.Component {
                                                                  className="image"></img>
                                                             <div>
                                                                 <p className="card-item-name">{this.state.playlists[index * 4].name}</p>
-                                                                <p className="card-item-count">
-                                                                    播放量：{this.state.playlists[index * 4].playCount / 10000}
-                                                                    万 </p>
+                                                                <div className="count-info">
+                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4].playCount / 10000}
+                                                                        万</i>
+                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4].bookCount}</i>
+                                                                </div>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
@@ -457,9 +459,11 @@ export default class HomePage extends React.Component {
                                                                  className="image"></img>
                                                             <div>
                                                                 <p className="card-item-name">{this.state.playlists[index * 4 + 1].name}</p>
-                                                                <p className="card-item-count">
-                                                                    播放量：{this.state.playlists[index * 4 + 1].playCount / 10000}
-                                                                    万 </p>
+                                                                <div className="count-info">
+                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + 1].playCount / 10000}
+                                                                        万</i>
+                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + 1].bookCount}</i>
+                                                                </div>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
@@ -469,9 +473,11 @@ export default class HomePage extends React.Component {
                                                                  className="image"></img>
                                                             <div>
                                                                 <p className="card-item-name">{this.state.playlists[index * 4 + 2].name}</p>
-                                                                <p className="card-item-count">
-                                                                    播放量：{this.state.playlists[index * 4 + 2].playCount / 10000}
-                                                                    万 </p>
+                                                                <div className="count-info">
+                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + 2].playCount / 10000}
+                                                                        万</i>
+                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + 2].bookCount}</i>
+                                                                </div>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>
@@ -481,9 +487,11 @@ export default class HomePage extends React.Component {
                                                                  className="image"></img>
                                                             <div>
                                                                 <p className="card-item-name">{this.state.playlists[index * 4 + 3].name}</p>
-                                                                <p className="card-item-count">
-                                                                    播放量：{this.state.playlists[index * 4 + 3].playCount / 10000}
-                                                                    万 </p>
+                                                                <div className="count-info">
+                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + 3].playCount / 10000}
+                                                                        万</i>
+                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + 3].bookCount}</i>
+                                                                </div>
                                                             </div>
                                                         </Card>
                                                     </Layout.Col>

@@ -45,10 +45,17 @@
     font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1';
     margin:0;
     padding:0;
+    color: #34588e;
 }
 .card-item-count {
+
+    margin:0px;
+    padding:10px;
+}
+.count-info {
+    display: flex;
+    justify-content: flex-end;
     font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1';
-    color: #999;
-    margin:0;
-    padding:0;
+    color: #aaa;
+    font:12px small;
 }
