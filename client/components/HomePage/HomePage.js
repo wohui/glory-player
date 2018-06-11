@@ -386,6 +386,10 @@ export default class HomePage extends React.Component {
 
     }
 
+    playListsClick(playListId) {
+        console.log(playListId)
+    }
+
     componentWillMount() {
 
     }
@@ -420,7 +424,7 @@ export default class HomePage extends React.Component {
                                         [1, 2, 3].map((item, index) => {
                                             return (
                                                 <Carousel.Item key={index}>
-                                                    <img src={this.state.bannerImages[index]}></img>
+                                                    <img src={this.state.bannerImages[index]}/>
                                                 </Carousel.Item>
                                             )
                                         })
@@ -440,65 +444,32 @@ export default class HomePage extends React.Component {
                                         <Carousel.Item key={index}>
                                             <div className="listContent">
                                                 <Layout.Row gutter="20">
-                                                    <Layout.Col span={6} offset={0}>
-                                                        <Card bodyStyle={{padding: 0}}>
-                                                            <div className="card-img">
-                                                                <img src={this.state.playlists[index * 4].coverImgUrl}
-                                                                     className="image"/>
-                                                                <Link to="/"></Link>
-                                                            </div>
-                                                            <div>
-                                                                <p className="card-item-name">{this.state.playlists[index * 4].name}</p>
-                                                                <div className="count-info">
-                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4].playCount / 10000}
-                                                                        万</i>
-                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4].bookCount}</i>
-                                                                </div>
-                                                            </div>
-                                                        </Card>
-                                                    </Layout.Col>
-                                                    <Layout.Col span={6} offset={0}>
-                                                        <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.playlists[index * 4 + 1].coverImgUrl}
-                                                                 className="image"></img>
-                                                            <div>
-                                                                <p className="card-item-name">{this.state.playlists[index * 4 + 1].name}</p>
-                                                                <div className="count-info">
-                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + 1].playCount / 10000}
-                                                                        万</i>
-                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + 1].bookCount}</i>
-                                                                </div>
-                                                            </div>
-                                                        </Card>
-                                                    </Layout.Col>
-                                                    <Layout.Col span={6} offset={0}>
-                                                        <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.playlists[index * 4 + 2].coverImgUrl}
-                                                                 className="image"></img>
-                                                            <div>
-                                                                <p className="card-item-name">{this.state.playlists[index * 4 + 2].name}</p>
-                                                                <div className="count-info">
-                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + 2].playCount / 10000}
-                                                                        万</i>
-                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + 2].bookCount}</i>
-                                                                </div>
-                                                            </div>
-                                                        </Card>
-                                                    </Layout.Col>
-                                                    <Layout.Col span={6} offset={0}>
-                                                        <Card bodyStyle={{padding: 0}}>
-                                                            <img src={this.state.playlists[index * 4 + 3].coverImgUrl}
-                                                                 className="image"></img>
-                                                            <div>
-                                                                <p className="card-item-name">{this.state.playlists[index * 4 + 3].name}</p>
-                                                                <div className="count-info">
-                                                                    <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + 3].playCount / 10000}
-                                                                        万</i>
-                                                                    <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + 3].bookCount}</i>
-                                                                </div>
-                                                            </div>
-                                                        </Card>
-                                                    </Layout.Col>
+                                                    {[1, 2, 3, 4].map((playListItem, playListIndex) => {
+                                                            return (
+                                                                <Layout.Col key={playListIndex} span={6} offset={0}>
+                                                                    <Card bodyStyle={{padding: 0}}>
+                                                                        <div className="card-img"
+                                                                             onClick={this.playListsClick.bind(this, this.state.playlists[index * 4 + playListIndex].id)}>
+                                                                            <img
+                                                                                src={this.state.playlists[index * 4 + playListIndex].coverImgUrl}
+                                                                                className="image"/>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p className="card-item-name">{this.state.playlists[index * 4 + playListIndex].name}</p>
+                                                                            <div className="count-info">
+                                                                                <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + playListIndex].playCount / 10000}
+                                                                                    万</i>
+                                                                                <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + playListIndex].bookCount}</i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </Card>
+                                                                </Layout.Col>
+                                                            )
+
+                                                        }
+                                                    )}
+
+
                                                 </Layout.Row>
                                             </div>
                                         </Carousel.Item>
