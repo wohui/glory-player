@@ -37,6 +37,8 @@
     max-height: 270px;
 }
 .card-item-name {
+    max-width: 270px;
+    max-height: 270px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
