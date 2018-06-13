@@ -18,6 +18,7 @@ const app = new Koa()
 
 // 开发模式
 if (process.env.NODE_ENV === 'development') {
+    console.log("开发环境了")
   dev(app)
 }
 
