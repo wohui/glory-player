@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import HomePage from "../components/HomePage/HomePage";
 import TopPage from "../components/TopPage/TopPage";
 import Error404Page from "../components/ErrorPage/404";
-import AddCategory from '../components/Category/AddCategory'
+import AddCategory from '../components/PlayLists/PlayList'
 import {Route, Switch} from 'react-router-dom';
 
 const MainRouter = () => (

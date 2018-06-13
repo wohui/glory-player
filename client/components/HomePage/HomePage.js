@@ -7,6 +7,8 @@ import './HomePage.css'
 
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
+
+import { browserHistory } from 'react-router'
 const moment = require('moment');
 
 export default class HomePage extends React.Component {
@@ -387,7 +389,8 @@ export default class HomePage extends React.Component {
     }
 
     playListsClick(playListId) {
-        console.log(playListId)
+        this.props.history.push( '/top/'+playListId)
+
     }
 
     componentWillMount() {
