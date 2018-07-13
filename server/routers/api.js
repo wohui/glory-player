@@ -4,10 +4,8 @@
 
 const router = require('koa-router')()
 const userInfoController = require('../controllers/api');
-const categoryInfoController = require('../controllers/category/category')
+const songListController = require('../controllers/songList/songList')
 const routers = router
-    .get('/getCategoryInfo',categoryInfoController.getCategoryInfo)
-    .get('/getAllCategoryName',categoryInfoController.getAllCategoryName)
-    .get('/deleteCategoryById',categoryInfoController.deleteCategoryById)
-    .post('/addCategoryInfo',categoryInfoController.addCategoryInfo)
+    .get('/getSongList',songListController.getSongList)
+    //.post('/addCategoryInfo',categoryInfoController.addCategoryInfo)
 module.exports = routers;

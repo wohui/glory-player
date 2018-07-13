@@ -19,7 +19,9 @@ const app = new Koa()
 // 开发模式
 if (process.env.NODE_ENV === 'development') {
     console.log("开发环境了")
+
   dev(app)
+
 }
 
 // 配置控制台日志中间件
@@ -31,10 +33,13 @@ app.use(static(path.join(__dirname, './upload')))
 
 // 配置ctx.body解析中间件
 app.use(bodyParser())
-
 // 配置服务端模板渲染引擎中间件
-app.use(views(path.join(__dirname, '../back/views'), {
-    extension: 'ejs'
+app.use(views(path.join(__dirname, '../dist'), {
+    extension: 'html'
+}))
+// 配置服务端模板渲染引擎中间件
+app.use(views(path.join(__dirname, '../dist'), {
+    extension: 'html'
 }))
 
 // 初始化路由中间件

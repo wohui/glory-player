@@ -3,3 +3,9 @@
     display: flex;
     justify-content: center;
 }
+.iframe {
+    width:654px;
+    height:470px;
+    display: block;
+
+}

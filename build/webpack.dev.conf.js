@@ -23,6 +23,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         chunkFilename: 'js/chunks/[id].[chunkhash:8].js',
         publicPath: '/'
     },
+
     module: {
         rules: [
             {

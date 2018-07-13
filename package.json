@@ -6,12 +6,13 @@
     "hstart": "npm run build & node ./server/server.js",
     "hprod": "webpack --mode production --config ./build/webpack.dev.js",
     "hdev": "webpack-dev-server --devtool eval --progress --colors --profile --config build/webpack.dev.js & node ./server/server.js",
-    "start:prod": "cross-env NODE_ENV=production node dist/server",
-    "build": "node build/build.js",
-    "dev": "cross-env NODE_ENV=development node ./server/app.js",
+
     "dev:dll": "cross-env NODE_ENV=development webpack --config build/webpack.dll.conf.js",
     "prod:dll": "cross-env NODE_ENV=production webpack --mode production --config build/webpack.dll.conf.js",
-    "dll": "npm run dev:dll && npm run prod:dll"
+    "dll": "npm run dev:dll && npm run prod:dll",
+    "dev": "cross-env NODE_ENV=development node ./server/app.js",
+    "runonprod": "node build/build.js && node ./server/app.js",
+    "build": "node build/build.js"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -35,7 +36,7 @@
     "koa-webpack-middleware": "^1.0.7",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
-    "nodemon": "^1.17.3",
+    "nodemon": "^1.17.5",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",

@@ -9,6 +9,7 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 import { browserHistory } from 'react-router'
+
 const moment = require('moment');
 
 export default class HomePage extends React.Component {
@@ -18,7 +19,7 @@ export default class HomePage extends React.Component {
         this.state = {
             data: [], //issue数据
             issueDialogVisible: false,
-            playlists: [
+            songLists: [
                 {
                     "id": 67234232,
                     "name": "[剑三]那些年感动你我的剑网三剧情歌",
@@ -388,8 +389,8 @@ export default class HomePage extends React.Component {
 
     }
 
-    playListsClick(playListId) {
-        this.props.history.push( '/top/'+playListId)
+    songListsClick(songListId) {
+        this.props.history.push( '/songList/'+songListId)
 
     }
 
@@ -447,22 +448,22 @@ export default class HomePage extends React.Component {
                                         <Carousel.Item key={index}>
                                             <div className="listContent">
                                                 <Layout.Row gutter="20">
-                                                    {[1, 2, 3, 4].map((playListItem, playListIndex) => {
+                                                    {[1, 2, 3, 4].map((songListItem, songListIndex) => {
                                                             return (
-                                                                <Layout.Col key={playListIndex} span={6} offset={0}>
+                                                                <Layout.Col key={songListIndex} span={6} offset={0}>
                                                                     <Card bodyStyle={{padding: 0}}>
                                                                         <div className="card-img"
-                                                                             onClick={this.playListsClick.bind(this, this.state.playlists[index * 4 + playListIndex].id)}>
+                                                                             onClick={this.songListsClick.bind(this, this.state.songLists[index * 4 + songListIndex].id)}>
                                                                             <img
-                                                                                src={this.state.playlists[index * 4 + playListIndex].coverImgUrl}
+                                                                                src={this.state.songLists[index * 4 + songListIndex].coverImgUrl}
                                                                                 className="image"/>
                                                                         </div>
                                                                         <div>
-                                                                            <p className="card-item-name">{this.state.playlists[index * 4 + playListIndex].name}</p>
+                                                                            <p className="card-item-name">{this.state.songLists[index * 4 + songListIndex].name}</p>
                                                                             <div className="count-info">
-                                                                                <i className="el-icon-caret-right card-item-count">{this.state.playlists[index * 4 + playListIndex].playCount / 10000}
+                                                                                <i className="el-icon-caret-right card-item-count">{this.state.songLists[index * 4 + songListIndex].playCount / 10000}
                                                                                     万</i>
-                                                                                <i className="el-icon-star-on card-item-count">{this.state.playlists[index * 4 + playListIndex].bookCount}</i>
+                                                                                <i className="el-icon-star-on card-item-count">{this.state.songLists[index * 4 + songListIndex].bookCount}</i>
                                                                             </div>
                                                                         </div>
                                                                     </Card>
