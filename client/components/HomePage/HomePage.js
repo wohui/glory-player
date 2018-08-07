@@ -1,14 +1,14 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {Card, Carousel, Layout} from 'element-react'
 
 import 'element-theme-default' //导入element-ui默认主题
 import './HomePage.css'
+import {browserHistory} from 'react-router'
+import FriendLink from "../FriendLink/FriendLink";
+import Header from "../Header/Header";
 
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-
-import { browserHistory } from 'react-router'
 
 const moment = require('moment');
 
@@ -390,7 +390,7 @@ export default class HomePage extends React.Component {
     }
 
     songListsClick(songListId) {
-        this.props.history.push( '/songList/'+songListId)
+        this.props.history.push('/songList/' + songListId)
 
     }
 
@@ -418,74 +418,79 @@ export default class HomePage extends React.Component {
 
     render() {
         return (
-            <div className="banner">
-                <Layout.Row>
-                    <Layout.Col span="24">
-                        <div className="grid-content bg-purple-light">
-                            <div className="demo-4 medium">
-                                <Carousel interval="4000" type="card" height="200px">
-                                    {
-                                        [1, 2, 3].map((item, index) => {
-                                            return (
-                                                <Carousel.Item key={index}>
-                                                    <img src={this.state.bannerImages[index]}/>
-                                                </Carousel.Item>
-                                            )
-                                        })
-                                    }
-                                </Carousel>
+            <div>
+                <div className="banner">
+                    <Layout.Row>
+                        <Layout.Col span="24">
+                            <div className="grid-content bg-purple-light">
+                                <div className="demo-4 medium">
+                                    <Carousel interval="4000" type="card" height="200px">
+                                        {
+                                            [1, 2, 3].map((item, index) => {
+                                                return (
+                                                    <Carousel.Item key={index}>
+                                                        <img src={this.state.bannerImages[index]}/>
+                                                    </Carousel.Item>
+                                                )
+                                            })
+                                        }
+                                    </Carousel>
+                                </div>
                             </div>
-                        </div>
-                    </Layout.Col>
-                </Layout.Row>
-                <div className="songList">
-                    <p className="title">Glory推荐</p>
-                    <div>
-                        <Carousel autoplay={false} arrow="always" height="360px">
-                            {
-                                [1, 2].map((item, index) => {
-                                    return (
-                                        <Carousel.Item key={index}>
-                                            <div className="listContent">
-                                                <Layout.Row gutter="20">
-                                                    {[1, 2, 3, 4].map((songListItem, songListIndex) => {
-                                                            return (
-                                                                <Layout.Col key={songListIndex} span={6} offset={0}>
-                                                                    <Card bodyStyle={{padding: 0}}>
-                                                                        <div className="card-img"
-                                                                             onClick={this.songListsClick.bind(this, this.state.songLists[index * 4 + songListIndex].id)}>
-                                                                            <img
-                                                                                src={this.state.songLists[index * 4 + songListIndex].coverImgUrl}
-                                                                                className="image"/>
-                                                                        </div>
-                                                                        <div>
-                                                                            <p className="card-item-name">{this.state.songLists[index * 4 + songListIndex].name}</p>
-                                                                            <div className="count-info">
-                                                                                <i className="el-icon-caret-right card-item-count">{this.state.songLists[index * 4 + songListIndex].playCount / 10000}
-                                                                                    万</i>
-                                                                                <i className="el-icon-star-on card-item-count">{this.state.songLists[index * 4 + songListIndex].bookCount}</i>
+                        </Layout.Col>
+                    </Layout.Row>
+                    <div className="songList">
+                        <p className="title">Glory推荐</p>
+                        <div>
+                            <Carousel autoplay={false} arrow="always" height="360px">
+                                {
+                                    [1, 2].map((item, index) => {
+                                        return (
+                                            <Carousel.Item key={index}>
+                                                <div className="listContent">
+                                                    <Layout.Row gutter="20">
+                                                        {[1, 2, 3, 4].map((songListItem, songListIndex) => {
+                                                                return (
+                                                                    <Layout.Col key={songListIndex} span={6} offset={0}>
+                                                                        <Card bodyStyle={{padding: 0}}>
+                                                                            <div className="card-img"
+                                                                                 onClick={this.songListsClick.bind(this, this.state.songLists[index * 4 + songListIndex].id)}>
+                                                                                <img
+                                                                                    src={this.state.songLists[index * 4 + songListIndex].coverImgUrl}
+                                                                                    className="image"/>
                                                                             </div>
-                                                                        </div>
-                                                                    </Card>
-                                                                </Layout.Col>
-                                                            )
+                                                                            <div>
+                                                                                <p className="card-item-name">{this.state.songLists[index * 4 + songListIndex].name}</p>
+                                                                                <div className="count-info">
+                                                                                    <i className="el-icon-caret-right card-item-count">{this.state.songLists[index * 4 + songListIndex].playCount / 10000}
+                                                                                        万</i>
+                                                                                    <i className="el-icon-star-on card-item-count">{this.state.songLists[index * 4 + songListIndex].bookCount}</i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </Card>
+                                                                    </Layout.Col>
+                                                                )
 
-                                                        }
-                                                    )}
+                                                            }
+                                                        )}
 
 
-                                                </Layout.Row>
-                                            </div>
-                                        </Carousel.Item>
-                                    )
-                                })
-                            }
-                        </Carousel>
+                                                    </Layout.Row>
+                                                </div>
+                                            </Carousel.Item>
+                                        )
+                                    })
+                                }
+                            </Carousel>
+                        </div>
+
                     </div>
-
                 </div>
-
-
+                <div className="home-friend">
+                    <div>
+                        <FriendLink/>
+                    </div>
+                </div>
             </div> /**end**/
 
 

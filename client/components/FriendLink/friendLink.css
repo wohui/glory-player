@@ -1,0 +1,23 @@
+
+.friend-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font: 30px large bold;
+    color: #424b50;
+}
+.friend-img {
+    height: 28px;
+    width: auto;
+    box-shadow: 0 2px 15px 1px rgba(0,0,0,0);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.friend-img:hover{
+    transform: scale(1.5); /*鼠标进入时放大1.5*/
+}
+a {
+    text-decoration: none;
+
+}
