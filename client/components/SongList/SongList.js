@@ -43,11 +43,11 @@ class SongList extends React.Component {
     }
 
     componentDidMount() {
-        const songListId = this.props.match.params.songListId
+        const playListId = this.props.match.params.playListId
         //向后端请求类型名称数据
         axios.get('/api/getSongList', {
             params: {
-                songListId: songListId
+                playListId: playListId
             }
         }).then((res) => {
             this.setState({
@@ -74,7 +74,7 @@ class SongList extends React.Component {
                         </Layout.Col>
                         <Layout.Col span="12" className="right-col">
                             <div className="song-list-info grid-content bg-purple-light">
-                                <div><p className="song-list-title">{this.state.playlist.name}</p></div>
+                                <div><p className="play-list-song-title">{this.state.playlist.name}</p></div>
                             </div>
                             <div className="song-list-info grid-content bg-purple-light">
                                 <div>
@@ -122,16 +122,15 @@ class SongList extends React.Component {
                     <div className="song">
                         {
                             this.state.playlist.tracks.slice(0, 20).map((el, index) => {
-                                console.log("2333");
                                 return <li className="song-info" key={index}>
                                     <Layout.Row gutter="24" className="song-row">
-                                        <Layout.Col span="1" className="song-col col-num">
+                                        <Layout.Col span="1" className="play-list-song-col col-num">
                                             <div className="grid-content bg-purple song-num">{index + 1}</div>
                                         </Layout.Col>
-                                        <Layout.Col span="11" className="song-col col-name">
-                                            <div className="grid-content bg-purple song-name">{el.name}</div>
+                                        <Layout.Col span="11" className="play-list-song-col col-name">
+                                            <div className="grid-content bg-purple col-song-name">{el.name}</div>
                                         </Layout.Col>
-                                        <Layout.Col span="4" className="song-col col-singer">
+                                        <Layout.Col span="4" className="play-list-song-col col-singer">
                                             <div className="grid-content bg-purple-light singer">
                                                 {
                                                     el.ar.map((el, index) => {
@@ -140,7 +139,7 @@ class SongList extends React.Component {
                                                 }
                                             </div>
                                         </Layout.Col>
-                                        <Layout.Col span="4" className="song-col col-time">
+                                        <Layout.Col span="4" className="play-list-song-col col-time">
                                             <div
                                                 className="grid-content bg-purple song-time">{Math.floor((8 * el.l.size) / (el.l.br) / 60)+":"+((8 * el.l.size) / (el.l.br) % 60 /100).toFixed(2).slice(-2)}</div>
                                         </Layout.Col>

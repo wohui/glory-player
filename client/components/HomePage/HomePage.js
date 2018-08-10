@@ -5,8 +5,7 @@ import 'element-theme-default' //导入element-ui默认主题
 import './HomePage.css'
 import {browserHistory} from 'react-router'
 import FriendLink from "../FriendLink/FriendLink";
-import Header from "../Header/Header";
-
+import axios from 'axios'
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -19,7 +18,7 @@ export default class HomePage extends React.Component {
         this.state = {
             data: [], //issue数据
             issueDialogVisible: false,
-            songLists: [
+            playLists: [
                 {
                     "id": 67234232,
                     "name": "[剑三]那些年感动你我的剑网三剧情歌",
@@ -382,23 +381,104 @@ export default class HomePage extends React.Component {
                     "bookCount": 37,
                     "highQuality": false
                 }],
+            songLists: [
+                {
+                    "id": 3280167,
+                    "name": "热门华语276",
+                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 36179829,
+                    "name": "追光者",
+                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 71714571,
+                    "name": "沧海一声笑",
+                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
+                    "singer": "嘟嘟"
 
+                },
+                {
+                    "id": 3280167,
+                    "name": "热门华语276",
+                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 36179829,
+                    "name": "追光者",
+                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 71714571,
+                    "name": "沧海一声笑",
+                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 3280167,
+                    "name": "热门华语276",
+                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 36179829,
+                    "name": "追光者",
+                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 71714571,
+                    "name": "沧海一声笑",
+                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 3280167,
+                    "name": "热门华语276",
+                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
+                },
+                {
+                    "id": 36179829,
+                    "name": "追光者",
+                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
+                    "singer": "嘟嘟"
+                },
+                {
+                    "id": 71714571,
+                    "name": "沧海一声笑",
+                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
+                    "singer": "嘟嘟"
+
+                }
+            ],
+            test:null,
+            songList:[{
+                "song_id":"123"
+
+            },
+                {
+                    "song_id":"123"
+
+                }
+            ],
             bannerImages: ["http://wsing.bssdl.kugou.com/08bb2b3f6aef64873451b604670ee040.jpg", "http://wsing.bssdl.kugou.com/eccdba1f5eb5aede01ae2da1cfaa93a9.jpg", "http://wsing.bssdl.kugou.com/f766d67e07b1a68f421db619fcc945e0.jpg"],
-            songListImages: ["https://p1.music.126.net/0qa7W8CGaSix-ot5g_JpIQ==/6009930558058987.jpg", "https://p1.music.126.net/untJnGtvu2B7ZEUBuiz6Tg==/19098516974530745.jpg", "https://p1.music.126.net/jFQPfhsoQV_f8516DYdlIQ==/18600438209061477.jpg"],
+            playListImages: ["https://p1.music.126.net/0qa7W8CGaSix-ot5g_JpIQ==/6009930558058987.jpg", "https://p1.music.126.net/untJnGtvu2B7ZEUBuiz6Tg==/19098516974530745.jpg", "https://p1.music.126.net/jFQPfhsoQV_f8516DYdlIQ==/18600438209061477.jpg"],
         }
 
     }
 
-    songListsClick(songListId) {
-        this.props.history.push('/songList/' + songListId)
+    playListsClick(playListId) {
+        this.props.history.push('/playList/' + playListId)
 
     }
 
-    componentWillMount() {
-
-    }
-
-    componentDidMount() {
+    songClick(songId) {
+        console.log("233"+songId)
         //向后端请求类型名称数据
         // axios.get('/api/getAllCategoryName', {
         //     params: {
@@ -413,6 +493,28 @@ export default class HomePage extends React.Component {
         // }).catch((error) => {
         //     console.log("error:" + error)
         // });
+
+    }
+
+    componentWillMount() {
+
+    }
+
+    componentDidMount() {
+        //向后端请求数据，获取推荐歌曲信息
+        axios.get('/api/getGlorySong', {
+            params: {
+
+            }
+        }).then((res) => {
+            this.setState({
+                songList: res.data.data
+            }, () => {
+                console.log(res.data.data);
+            });
+        }).catch((error) => {
+            console.log("error:" + error)
+        });
     }
 
 
@@ -439,53 +541,81 @@ export default class HomePage extends React.Component {
                             </div>
                         </Layout.Col>
                     </Layout.Row>
-                    <div className="songList">
-                        <p className="title">Glory推荐</p>
-                        <div>
-                            <Carousel autoplay={false} arrow="always" height="360px">
-                                {
-                                    [1, 2].map((item, index) => {
-                                        return (
-                                            <Carousel.Item key={index}>
-                                                <div className="listContent">
-                                                    <Layout.Row gutter="20">
-                                                        {[1, 2, 3, 4].map((songListItem, songListIndex) => {
-                                                                return (
-                                                                    <Layout.Col key={songListIndex} span={6} offset={0}>
-                                                                        <Card bodyStyle={{padding: 0}}>
-                                                                            <div className="card-img"
-                                                                                 onClick={this.songListsClick.bind(this, this.state.songLists[index * 4 + songListIndex].id)}>
-                                                                                <img
-                                                                                    src={this.state.songLists[index * 4 + songListIndex].coverImgUrl}
-                                                                                    className="image"/>
+                </div>
+                <div className="playList">
+                    <p className="play-list-title">Glory歌单</p>
+                    <div>
+                        <Carousel autoplay={false} arrow="always" height="360px">
+                            {
+                                [1, 2].map((item, index) => {
+                                    return (
+                                        <Carousel.Item key={index}>
+                                            <div className="listContent">
+                                                <Layout.Row gutter="20">
+                                                    {[1, 2, 3, 4].map((playListItem, playListIndex) => {
+                                                            return (
+                                                                <Layout.Col key={playListIndex} span={6} offset={0}>
+                                                                    <Card bodyStyle={{padding: 0}}>
+                                                                        <div className="card-img"
+                                                                             onClick={this.playListsClick.bind(this, this.state.playLists[index * 4 + playListIndex].id)}>
+                                                                            <img
+                                                                                src={this.state.playLists[index * 4 + playListIndex].coverImgUrl}
+                                                                                className="image"/>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p className="card-item-name">{this.state.playLists[index * 4 + playListIndex].name}</p>
+                                                                            <div className="count-info">
+                                                                                <i className="el-icon-caret-right card-item-count">{this.state.playLists[index * 4 + playListIndex].playCount / 10000}
+                                                                                    万</i>
+                                                                                <i className="el-icon-star-on card-item-count">{this.state.playLists[index * 4 + playListIndex].bookCount}</i>
                                                                             </div>
-                                                                            <div>
-                                                                                <p className="card-item-name">{this.state.songLists[index * 4 + songListIndex].name}</p>
-                                                                                <div className="count-info">
-                                                                                    <i className="el-icon-caret-right card-item-count">{this.state.songLists[index * 4 + songListIndex].playCount / 10000}
-                                                                                        万</i>
-                                                                                    <i className="el-icon-star-on card-item-count">{this.state.songLists[index * 4 + songListIndex].bookCount}</i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </Card>
-                                                                    </Layout.Col>
-                                                                )
+                                                                        </div>
+                                                                    </Card>
+                                                                </Layout.Col>
+                                                            )
 
-                                                            }
-                                                        )}
+                                                        }
+                                                    )}
 
 
-                                                    </Layout.Row>
-                                                </div>
-                                            </Carousel.Item>
-                                        )
-                                    })
-                                }
-                            </Carousel>
-                        </div>
-
+                                                </Layout.Row>
+                                            </div>
+                                        </Carousel.Item>
+                                    )
+                                })
+                            }
+                        </Carousel>
                     </div>
                 </div>
+
+                <div className="song-list">
+                    <p className="song-list-title">为你推荐</p>
+                    <div>
+                        <div className="listContent">
+                            <Layout.Row>
+                                {[1, 2,3].map((songListItem, songListIndex) => {
+                                        return (
+                                            <Layout.Col className="song-col" key={songListIndex} span={6} offset={0}>
+                                                    <div  className="song-img-div"
+                                                          onClick={this.songClick.bind(this, this.state.songList[songListIndex].song_id)}>
+                                                        <img src={this.state.songList[songListIndex].pic_url}
+                                                             className="song-image"/>
+                                                        <p className="song-name">{this.state.songList[songListIndex].song_name}</p>
+                                                        <p className="song-singer">{this.state.songList[songListIndex].singer}</p>
+                                                    </div>
+
+                                            </Layout.Col>
+                                        )
+
+                                    }
+                                )}
+
+
+                            </Layout.Row>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="home-friend">
                     <div>
                         <FriendLink/>

@@ -19,6 +19,7 @@
     width: 500px;
     font-size: 14px;
 }
+
 .song-list-time {
     margin: 5px;
 }
@@ -32,13 +33,15 @@
 .song-list-tag-item {
     margin: 5px;
 }
+.content {
+   margin-left: 25%;
+}
 .content-header {
     display: flex;
     justify-content: center;
-    width: 120%;
 }
 .header-row {
-    width: 50%;
+    width: 100%;
 }
 
 .song-header-col {
@@ -49,17 +52,19 @@
     margin-bottom: 1%;
 }
 .header-song-name {
-    margin-left: 10%;
+    margin-left: 9%;
 }
+.header-song-time {
+     margin-left: 0%;
+ }
 .song-info {
     display: flex;
     justify-content: center;
-    width: 120%;
 }
 .song-row {
-    width: 50%;
+    width: 100%;
 }
-.song-col {
+.play-list-song-col {
     float: left;
     list-style: none;
     line-height: 30px;
@@ -70,12 +75,11 @@
 .col-name {
     color: #333;
 }
-.col-time {
-    color: #999;
-}
 .singer {
-    width: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.col-time {
+    color: #999;
 }

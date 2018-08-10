@@ -10,11 +10,11 @@
 .banner {
 
 }
-.songList {
+.playList {
     width: 100%;
     background: #d7ecf1;
 }
-.title {
+.play-list-title {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -48,7 +48,6 @@
     color: #34588e;
 }
 .card-item-count {
-
     margin:0px;
     padding:10px;
 }
@@ -59,4 +58,73 @@
     color: #aaa;
     background: #415065;
     font:12px small;
+}
+
+.song-list {
+    width: 100%;
+    background: #415065;
+}
+.song-list-title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font: 30px large bold;
+    color: #fff;
+}
+.listContent {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+.song-col {
+    width: 180px;
+    height: auto;
+}
+.song-img-div {
+    /*width:200px;*/
+    /*height:200px;*/
+    /*overflow:hidden;*/
+    /*border-radius:50%;*/
+
+    border: none;
+    display:inline-block;
+    position:relative;
+    width:200px;
+    height:auto;
+    overflow:hidden;
+    border-radius:50%;
+
+}
+.song-name {
+    color: #fff;
+}
+.song-image {
+    width:200px;
+    height:auto;
+    clip-path: circle(30% at 50% 50%);
+    background: none;
+    /*background: none;*/
+    /*width:200px;*/
+    /*height:200px;*/
+    /*margin-top:-20%;*/
+    /*margin-bottom:-15%;*/
+
+}
+.song-name {
+    position:absolute; z-index:1;
+    left: 0; right: 0;
+    top:166px;
+    margin:auto;
+    text-align: center;
+    vertical-align:middle;
+}
+.song-singer {
+    position:absolute; z-index:1;
+    left: 0; right: 0;
+    color: #aaaaaa;
+    font-size: 12px;
+    top:186px;
+    margin:auto;
+    text-align: center;
+    vertical-align:middle;
 }

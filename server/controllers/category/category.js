@@ -1,4 +1,4 @@
-const config = require('../../config/config')
+const config = require('../../config/config_pro')
 const moment = require('moment');
 const  {Pool} = require('pg')
 const pool = new Pool(config)

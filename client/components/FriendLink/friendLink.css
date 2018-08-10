@@ -1,4 +1,6 @@
-
+.friend-link {
+    background: #353535;
+}
 .friend-title {
     display: flex;
     justify-content: center;
