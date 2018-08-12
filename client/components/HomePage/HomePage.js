@@ -395,22 +395,7 @@ export default class HomePage extends React.Component {
     }
 
     songClick(songId) {
-        console.log("233" + songId)
-        //向后端请求类型名称数据
-        // axios.get('/api/getAllCategoryName', {
-        //     params: {
-        //         //ID: 12345
-        //     }
-        // }).then((res) => {
-        //     this.setState({
-        //
-        //     }, () => {
-        //         console.log(res.data.data);
-        //     });
-        // }).catch((error) => {
-        //     console.log("error:" + error)
-        // });
-
+        this.props.history.push('/song/' + songId)
     }
 
     componentWillMount() {
@@ -421,7 +406,7 @@ export default class HomePage extends React.Component {
             this.setState({
                 songList: res.data.data
             }, () => {
-                console.log(res.data.data);
+                //console.log(res.data.data);
             });
         }).catch((error) => {
             console.log("error:" + error)
@@ -517,7 +502,7 @@ export default class HomePage extends React.Component {
                                                      onClick={this.songClick.bind(this, this.state.songList[songListIndex].song_id)}>
                                                     <img src={this.state.songList[songListIndex].pic_url}
                                                          className="song-image"/>
-                                                    <p className="song-name">{this.state.songList[songListIndex].song_name}</p>
+                                                    <p className="home-song-name">{this.state.songList[songListIndex].song_name}</p>
                                                     <p className="song-singer">{this.state.songList[songListIndex].singer}</p>
                                                 </div>
 

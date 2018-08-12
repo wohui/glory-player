@@ -2,7 +2,7 @@
 const moment = require('moment');
 const Sequelize = require("sequelize")
 
-
+const axios = require('axios')
 const sequelize = require('../../sequelize');
 //导入数据模型
 const song = sequelize.import('../../models/song');
@@ -58,7 +58,7 @@ const doQueryGlorySong = function (data) {
 
             }
         ).then(song => {
-            console.log("sequelize:" + song)
+            console.log("sequelize:" + song);
             resolve(song)
         })
 
@@ -77,12 +77,53 @@ const queryGlorySong = async function () {
     }
 
 }
+const doGetSongDetail = function (songId) {
+    console.log("doGetSongDetail")
+    var p = new Promise(function (resolve, reject) {
+        //做一些异步操作
+        /**
+         *  向https://api.imjad.cn/cloudmusic/请求歌单数据
+         *
+         */
+        axios.get("https://api.imjad.cn/cloudmusic/", {
+            params: {
+                'type': 'detail',
+                'id': songId,
+            }
+        }).then((res) => {
+            resolve(res.data)
+
+        }).catch((error) => {
+            console.log("error:" + error)
+            reject(error)
+        });
+
+    });
+    return p;
+};
 
 /**
  *
- * @type {{queryAllSong: (function(*): Promise), querySong: (function(*): Promise)}}
+ * @type {{queryAllSong: {(*): Promise, (*): Promise.<void>}, queryGlorySong: (function(*): Promise)}}
  */
 module.exports = {
+    /**
+     *
+     */
+    async getSongDetail(ctx) {
+        let songId = ctx.request.query.songId;
+        let data = await doGetSongDetail(songId);
+        ctx.body = {
+            success: true,
+            data: data
+        }
+
+    },
+    /**
+     * 查询所有歌曲列表
+     * @param ctx
+     * @returns {Promise.<void>}
+     */
     async queryAllSong(ctx) {
         let data = await getAllSong();
         ctx.body = {
@@ -91,8 +132,6 @@ module.exports = {
         }
 
     },
-
-
 
     /**
      * 根据查询条件查询工单数据

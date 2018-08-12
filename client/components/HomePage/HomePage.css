@@ -92,9 +92,7 @@
     overflow:hidden;
 
 }
-.song-name {
-    color: #fff;
-}
+
 .song-image {
     width:200px;
     height: 200px;
@@ -102,7 +100,8 @@
     background: none;
 
 }
-.song-name {
+.home-song-name {
+    color: #fff;
     position:absolute; z-index:1;
     left: 0; right: 0;
     top:166px;

@@ -34,10 +34,6 @@ const doGetPlayList = function (playListId) {
             console.log("error:" + error)
             reject(error)
         });
-        /**
-         * 向数据库里插入歌曲信息
-         */
-
 
     });
     return p;

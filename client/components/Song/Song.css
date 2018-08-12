@@ -1,0 +1,39 @@
+.song-header {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.song-img {
+    margin-right: 20px;
+    width: 220px;
+}
+.left-col {
+    width: 200px;
+}
+.right-col {
+    width: 400px;
+}
+.song-info {
+    margin-left: 20px;
+    color: #999999;
+    width: 500px;
+    font-size: 14px;
+}
+
+.song-time {
+    margin: 5px;
+}
+.song-author{
+    margin: 5px;
+}
+.action-btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.song-tag-item {
+    margin: 5px;
+}
+.content {
+   margin-left: 25%;
+}
+

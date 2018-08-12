@@ -9,5 +9,6 @@ const songController = require('../controllers/song/song')
 const routers = router
     .get('/getSongList',playListController.getPlayList)
     .get('/getGlorySong',songController.queryGlorySong)
+    .get('/getSongDetail',songController.getSongDetail)
     //.post('/addCategoryInfo',categoryInfoController.addCategoryInfo)
 module.exports = routers;
