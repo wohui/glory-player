@@ -6,6 +6,7 @@ import './HomePage.css'
 import {browserHistory} from 'react-router'
 import FriendLink from "../FriendLink/FriendLink";
 import axios from 'axios'
+
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -381,91 +382,7 @@ export default class HomePage extends React.Component {
                     "bookCount": 37,
                     "highQuality": false
                 }],
-            songLists: [
-                {
-                    "id": 3280167,
-                    "name": "热门华语276",
-                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 36179829,
-                    "name": "追光者",
-                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 71714571,
-                    "name": "沧海一声笑",
-                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
-                    "singer": "嘟嘟"
-
-                },
-                {
-                    "id": 3280167,
-                    "name": "热门华语276",
-                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 36179829,
-                    "name": "追光者",
-                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 71714571,
-                    "name": "沧海一声笑",
-                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 3280167,
-                    "name": "热门华语276",
-                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 36179829,
-                    "name": "追光者",
-                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 71714571,
-                    "name": "沧海一声笑",
-                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 3280167,
-                    "name": "热门华语276",
-                    "picUrl": "https://p4.music.126.net/m1dn9beWdx-XY3ihksrmEw==/3379898744233514.jpg",
-                },
-                {
-                    "id": 36179829,
-                    "name": "追光者",
-                    "picUrl": "https://p4.music.126.net/6x6bCsbTsBKydOtdUoIMAQ==/109951163024132338.jpg",
-                    "singer": "嘟嘟"
-                },
-                {
-                    "id": 71714571,
-                    "name": "沧海一声笑",
-                    "picUrl": "https://p4.music.126.net/_FqdSnOm1xmHmNffNONbZw==/109951163392997165.jpg",
-                    "singer": "嘟嘟"
-
-                }
-            ],
-            test:null,
-            songList:[{
-                "song_id":"123"
-
-            },
-                {
-                    "song_id":"123"
-
-                }
-            ],
+            songList: Array(6).fill({"song_id": ''}),//构建一个初始长度为6,包含{"id":""}的值
             bannerImages: ["http://wsing.bssdl.kugou.com/08bb2b3f6aef64873451b604670ee040.jpg", "http://wsing.bssdl.kugou.com/eccdba1f5eb5aede01ae2da1cfaa93a9.jpg", "http://wsing.bssdl.kugou.com/f766d67e07b1a68f421db619fcc945e0.jpg"],
             playListImages: ["https://p1.music.126.net/0qa7W8CGaSix-ot5g_JpIQ==/6009930558058987.jpg", "https://p1.music.126.net/untJnGtvu2B7ZEUBuiz6Tg==/19098516974530745.jpg", "https://p1.music.126.net/jFQPfhsoQV_f8516DYdlIQ==/18600438209061477.jpg"],
         }
@@ -478,7 +395,7 @@ export default class HomePage extends React.Component {
     }
 
     songClick(songId) {
-        console.log("233"+songId)
+        console.log("233" + songId)
         //向后端请求类型名称数据
         // axios.get('/api/getAllCategoryName', {
         //     params: {
@@ -497,15 +414,9 @@ export default class HomePage extends React.Component {
     }
 
     componentWillMount() {
-
-    }
-
-    componentDidMount() {
         //向后端请求数据，获取推荐歌曲信息
         axios.get('/api/getGlorySong', {
-            params: {
-
-            }
+            params: {}
         }).then((res) => {
             this.setState({
                 songList: res.data.data
@@ -515,6 +426,12 @@ export default class HomePage extends React.Component {
         }).catch((error) => {
             console.log("error:" + error)
         });
+
+
+    }
+
+    componentDidMount() {
+
     }
 
 
@@ -593,16 +510,16 @@ export default class HomePage extends React.Component {
                     <div>
                         <div className="listContent">
                             <Layout.Row>
-                                {[1, 2,3].map((songListItem, songListIndex) => {
+                                {[1, 2, 3, 4, 5, 6].map((songListItem, songListIndex) => {
                                         return (
                                             <Layout.Col className="song-col" key={songListIndex} span={6} offset={0}>
-                                                    <div  className="song-img-div"
-                                                          onClick={this.songClick.bind(this, this.state.songList[songListIndex].song_id)}>
-                                                        <img src={this.state.songList[songListIndex].pic_url}
-                                                             className="song-image"/>
-                                                        <p className="song-name">{this.state.songList[songListIndex].song_name}</p>
-                                                        <p className="song-singer">{this.state.songList[songListIndex].singer}</p>
-                                                    </div>
+                                                <div className="song-img-div"
+                                                     onClick={this.songClick.bind(this, this.state.songList[songListIndex].song_id)}>
+                                                    <img src={this.state.songList[songListIndex].pic_url}
+                                                         className="song-image"/>
+                                                    <p className="song-name">{this.state.songList[songListIndex].song_name}</p>
+                                                    <p className="song-singer">{this.state.songList[songListIndex].singer}</p>
+                                                </div>
 
                                             </Layout.Col>
                                         )

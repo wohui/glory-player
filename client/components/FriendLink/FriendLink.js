@@ -16,12 +16,6 @@ class FriendLink extends React.Component {
                 </Layout.Row>
                 <Layout.Row type="flex" justify="center">
                     <Layout.Col span="4">
-                        <a href="https://www.ciyuanjie.cn/" title="次元街" target="_blank">
-                        <img className="friend-img"
-                            src="https://s2.ciyuanjie.cn/uploads/2018/06/logo_副本.png"/>
-                        </a>
-                    </Layout.Col>
-                    <Layout.Col span="4">
                         <a href="http://5sing.kugou.com" title="5Sing" target="_blank">
                         <img className="friend-img"
                             src="http://static.5sing.kugou.com/public/v4.1.0/images/logo.png"/>
@@ -31,6 +25,12 @@ class FriendLink extends React.Component {
                         <a href="https://miaocy.com/" title="喵次元" target="_blank">
                         <img className="friend-img"
                             src="https://img1.miaocy.com/uploads/2018/06/logo03.png"/>
+                        </a>
+                    </Layout.Col>
+                    <Layout.Col span="4">
+                        <a href="http://img.52qingyin.cn/" title="古风图库" target="_blank">
+                            <img className="friend-img"
+                                 src="http://img.52qingyin.cn/zb_users/theme/gufengimg/logo.png"/>
                         </a>
                     </Layout.Col>
                     <Layout.Col span="4">

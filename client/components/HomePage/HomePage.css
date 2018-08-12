@@ -70,29 +70,26 @@
     width: 100%;
     font: 30px large bold;
     color: #fff;
+    margin: 0;
+    padding: 0;
 }
 .listContent {
     display: flex;
     justify-content: center;
     height: 100%;
+   padding-bottom:  10px;
 }
 .song-col {
     width: 180px;
     height: auto;
 }
 .song-img-div {
-    /*width:200px;*/
-    /*height:200px;*/
-    /*overflow:hidden;*/
-    /*border-radius:50%;*/
-
     border: none;
     display:inline-block;
     position:relative;
     width:200px;
     height:auto;
     overflow:hidden;
-    border-radius:50%;
 
 }
 .song-name {
@@ -100,14 +97,9 @@
 }
 .song-image {
     width:200px;
-    height:auto;
+    height: 200px;
     clip-path: circle(30% at 50% 50%);
     background: none;
-    /*background: none;*/
-    /*width:200px;*/
-    /*height:200px;*/
-    /*margin-top:-20%;*/
-    /*margin-bottom:-15%;*/
 
 }
 .song-name {
