@@ -10,5 +10,7 @@ const routers = router
     .get('/getSongList',playListController.getPlayList)
     .get('/getGlorySong',songController.queryGlorySong)
     .get('/getSongDetail',songController.getSongDetail)
+    .get('/getLyric',songController.getLyric)
+    .get('/getComments',songController.getComments)
     //.post('/addCategoryInfo',categoryInfoController.addCategoryInfo)
 module.exports = routers;

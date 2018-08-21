@@ -28,7 +28,7 @@ const doGetPlayList = function (playListId) {
             }
         }).then((res) => {
             resolve(res.data)
-            addSongToDataBaseByList(res.data)
+            //addSongToDataBaseByList(res.data)
 
         }).catch((error) => {
             console.log("error:" + error)

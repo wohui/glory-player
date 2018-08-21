@@ -2,7 +2,7 @@
   "name": "wokay",
   "version": "0.0.1",
   "scripts": {
-    "test":"./node_modules/.bin/nodemon bin/www",
+    "test": "./node_modules/.bin/nodemon bin/www",
     "dev:dll": "cross-env NODE_ENV=development webpack --config build/webpack.dll.conf.js",
     "prod:dll": "cross-env NODE_ENV=production webpack --mode production --config build/webpack.dll.conf.js",
     "dll": "npm run dev:dll && npm run prod:dll",
@@ -67,6 +67,7 @@
     "react-loadable": "^5.4.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-scrollbar": "^0.5.4",
     "sass-loader": "^7.0.3",
     "sequelize": "^4.38.0",
     "style-loader": "^0.20.3",

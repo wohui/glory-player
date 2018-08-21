@@ -57,15 +57,16 @@
 .header-song-time {
      margin-left: 0%;
  }
-.song-info {
-    display: flex;
-    justify-content: center;
-}
+
 .song-row {
     width: 100%;
 }
+
 .play-list-song-col {
     float: left;
+    line-height: 30px;
+}
+.playlist-song-info {
     list-style: none;
     line-height: 30px;
 }

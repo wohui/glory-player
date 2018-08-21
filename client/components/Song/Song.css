@@ -1,39 +1,138 @@
+body {
+    margin: 0;
+}
+
+.song-el-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .song-header {
     display: flex;
     justify-content: center;
-    margin: 10px;
 }
+
 .song-img {
     margin-right: 20px;
     width: 220px;
 }
+
 .left-col {
     width: 200px;
 }
+
 .right-col {
     width: 400px;
 }
-.song-info {
+
+.song-head-wrap {
+    background: #415065;
+}
+
+.song-head {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-left: 25%;
+}
+
+.song-song-info {
     margin-left: 20px;
     color: #999999;
     width: 500px;
     font-size: 14px;
 }
 
-.song-time {
+.song-song-name {
+    font-size: large;
+}
+
+.song-author {
     margin: 5px;
 }
-.song-author{
-    margin: 5px;
-}
+
 .action-btn {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
 .song-tag-item {
     margin: 5px;
 }
-.content {
-   margin-left: 25%;
+
+.song-content {
+    background: #d7ecf1;
+
 }
 
+.lyric-wrap {
+    margin-left: 25%;
+    border: 2px;
+}
+
+.lyric-title p {
+    font-size: 20px;
+}
+
+.lyric-text-content {
+    width: 48%;
+}
+
+.lyric-area {
+    width: 521px;
+    height: 400px;
+}
+
+.lyric-area-content {
+    font-size: 16px;
+    font-family: Microsoft YaHei;
+}
+
+.comments-wrap {
+
+}
+
+.comments-title p {
+    margin-left: 25%;
+    font-size: 20px;
+}
+
+.comments-info {
+    margin-left: 25%;
+}
+
+.comments-info-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 8px;
+}
+
+.comments-info-item-col {
+    width: 80%;
+    margin-left: 10px;
+}
+
+.comments-info-name {
+    color: #177cb0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.comments-info-time {
+    margin-left: 8px;
+    color: #999;
+}
+
+.comments-info-item-tag1 {
+    margin-bottom: 5px;
+}
+
+.comments-info-item-tag2 {
+    margin-bottom: 10px;
+}
+
+.comments-user-icon {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}

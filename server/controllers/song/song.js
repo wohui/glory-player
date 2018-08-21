@@ -77,8 +77,13 @@ const queryGlorySong = async function () {
     }
 
 }
+/**
+ * 获取歌曲详情信息
+ * @param songId
+ * @returns {Promise}
+ */
 const doGetSongDetail = function (songId) {
-    console.log("doGetSongDetail")
+
     var p = new Promise(function (resolve, reject) {
         //做一些异步操作
         /**
@@ -101,14 +106,93 @@ const doGetSongDetail = function (songId) {
     });
     return p;
 };
+/**
+ * 获取歌词信息
+ * @param songId
+ * @returns {Promise}
+ */
+const doGetLyric = function (songId) {
+    var p = new Promise(function (resolve, reject) {
+        //做一些异步操作
+        /**
+         *  向https://api.imjad.cn/cloudmusic/请求歌词数据
+         *
+         */
+        axios.get("https://api.imjad.cn/cloudmusic/", {
+            params: {
+                'type': 'lyric',
+                'id': songId,
+            }
+        }).then((res) => {
+            resolve(res.data)
 
+        }).catch((error) => {
+            console.log("doGetLyric-error:" + error)
+            reject(error)
+        });
+
+    });
+    return p;
+};
 /**
  *
- * @type {{queryAllSong: {(*): Promise, (*): Promise.<void>}, queryGlorySong: (function(*): Promise)}}
+ * @param songId
+ * @returns {Promise}
  */
+const doGetComments = function (songId) {
+    var p = new Promise(function (resolve, reject) {
+        //做一些异步操作
+        /**
+         *  向https://api.imjad.cn/cloudmusic/请求数据
+         *
+         */
+        axios.get("https://api.imjad.cn/cloudmusic/", {
+            params: {
+                'type': 'comments',
+                'id': songId,
+                'limit':20
+            }
+        }).then((res) => {
+            resolve(res.data)
+
+        }).catch((error) => {
+            console.log("doGetComments-error:" + error)
+            reject(error)
+        });
+
+    });
+    return p;
+};
+
+
 module.exports = {
     /**
-     *
+     *获取歌词信息
+     */
+    async getLyric(ctx) {
+        let songId = ctx.request.query.songId;
+        let data = await doGetLyric(songId);
+        ctx.body = {
+            success: true,
+            data: data
+        }
+
+    },
+    /**
+     * 获取评论信息
+     */
+    async getComments(ctx) {
+        let songId = ctx.request.query.songId;
+        let data = await doGetComments(songId);
+        ctx.body = {
+            success: true,
+            data: data
+        }
+
+    },
+
+    /**
+     *获取歌曲详情信息
      */
     async getSongDetail(ctx) {
         let songId = ctx.request.query.songId;

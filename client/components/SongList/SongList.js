@@ -122,7 +122,7 @@ class SongList extends React.Component {
                     <div className="song">
                         {
                             this.state.playlist.tracks.slice(0, 20).map((el, index) => {
-                                return <li className="song-info" key={index}>
+                                return <li className="playlist-song-info" key={index}>
                                     <Layout.Row gutter="24" className="song-row">
                                         <Layout.Col span="1" className="play-list-song-col col-num">
                                             <div className="grid-content bg-purple song-num">{index + 1}</div>
