@@ -68,7 +68,7 @@ class Song extends React.Component {
             }
         }).then((res) => {
             this.setState({
-                lyric: res.data.data.lrc.lyric,
+                lyric: res.data.data.lrc.lyric.replace(/(\[).*?(\])/g, ''),
             });
 
         }).catch((error) => {
@@ -154,7 +154,7 @@ class Song extends React.Component {
                             //onScroll={this.handleScroll}
                         >
                             <pre className="lyric-area-content">
-                                {this.state.lyric}
+                                {this.state.lyric.replace('(\\[\\?*)[^]]+.','')}
                             </pre>
                         </ScrollArea>
 
