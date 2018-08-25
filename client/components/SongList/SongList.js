@@ -1,10 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import {BrowserRouter} from 'react-router-dom'
 import {Button, Layout, Tag} from 'element-react'; //导入element-ui库
-import {Rate} from 'element-react'
 import 'element-theme-default' //导入element-ui默认主题
-
 import './SongList.css'
 
 
@@ -68,8 +64,7 @@ class SongList extends React.Component {
                     <Layout.Row>
                         <Layout.Col span="12" className="left-col">
                             <div className="song-list-img grid-content bg-purple">
-                                <img
-                                    src="http://wsing.bssdl.kugou.com/5467eeaf312ba0fd98cfb4078b8054d0.jpg_200x200.jpg"/>
+                                <img className="song-list-img-pic" src={this.state.playlist.creator.avatarUrl}/>
                             </div>
                         </Layout.Col>
                         <Layout.Col span="12" className="right-col">
@@ -141,7 +136,7 @@ class SongList extends React.Component {
                                         </Layout.Col>
                                         <Layout.Col span="4" className="play-list-song-col col-time">
                                             <div
-                                                className="grid-content bg-purple song-time">{Math.floor((8 * el.l.size) / (el.l.br) / 60)+":"+((8 * el.l.size) / (el.l.br) % 60 /100).toFixed(2).slice(-2)}</div>
+                                                className="grid-content bg-purple song-time">{Math.floor((8 * el.l.size) / (el.l.br) / 60) + ":" + ((8 * el.l.size) / (el.l.br) % 60 / 100).toFixed(2).slice(-2)}</div>
                                         </Layout.Col>
                                     </Layout.Row>
                                 </li>

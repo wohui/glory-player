@@ -16,7 +16,11 @@ body {
     margin-right: 20px;
     width: 220px;
 }
-
+/*歌曲信息上方图片*/
+.song-img-al-pic {
+    width: 180px;
+    height: 180px;
+}
 .left-col {
     width: 200px;
 }

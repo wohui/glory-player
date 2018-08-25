@@ -16,7 +16,12 @@ class Song extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            song: {},
+            song: {
+                name:'',
+                al:{
+                    picUrl:''
+                }
+            },
             lyric: '',
             comments: [
                 {
@@ -104,8 +109,7 @@ class Song extends React.Component {
                                     <Layout.Row>
                                         <Layout.Col span="12" className="left-col">
                                             <div className="song-img grid-content bg-purple">
-                                                <img
-                                                    src="http://wsing.bssdl.kugou.com/5467eeaf312ba0fd98cfb4078b8054d0.jpg_200x200.jpg"/>
+                                                <img className="song-img-al-pic" src={this.state.song.al.picUrl}/>
                                             </div>
                                         </Layout.Col>
                                         <Layout.Col span="12" className="right-col">
