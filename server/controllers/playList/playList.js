@@ -1,7 +1,4 @@
-const config = require('../../config/config_pro')
 const moment = require('moment');
-const {Pool} = require('pg')
-const pool = new Pool(config)
 const axios = require('axios')
 
 const sequelize = require('../../sequelize');
@@ -74,34 +71,6 @@ const getPlayList = async function (playListId) {
 }
 
 
-/**
- *
- * @returns {Promise<any>}
- */
-const doGetAllCategoryName = function () {
-    var p = new Promise(function (resolve, reject) {
-        //做一些异步操作
-        pool.connect().then(client => {
-            // insert 数据
-            client.query("select name from t_category_info ").then(res => {
-                var value = res.rows
-                resolve(value)
-                return res
-            })
-        })
-    });
-    return p;
-}
-
-const getAllCategoryName = async function () {
-    try {
-        data = await doGetAllCategoryName(); //设置字段
-        //如果返回 为何拿不到返回值
-        //return value
-    } catch (err) {
-        console.log("出错了啊:" + err)
-    }
-}
 
 
 module.exports = {
