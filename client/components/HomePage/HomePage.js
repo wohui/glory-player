@@ -383,9 +383,8 @@ export default class HomePage extends React.Component {
                     "highQuality": false
                 }],
             songList: Array(6).fill({"song_id": ''}),//构建一个初始长度为6,包含{"id":""}的值
-            bannerImages: ["http://wsing.bssdl.kugou.com/08bb2b3f6aef64873451b604670ee040.jpg", "http://wsing.bssdl.kugou.com/eccdba1f5eb5aede01ae2da1cfaa93a9.jpg", "http://wsing.bssdl.kugou.com/f766d67e07b1a68f421db619fcc945e0.jpg"],
-            playListImages: ["https://p1.music.126.net/0qa7W8CGaSix-ot5g_JpIQ==/6009930558058987.jpg", "https://p1.music.126.net/untJnGtvu2B7ZEUBuiz6Tg==/19098516974530745.jpg", "https://p1.music.126.net/jFQPfhsoQV_f8516DYdlIQ==/18600438209061477.jpg"],
-        }
+            bannerImages: ["http://wsing.bssdl.kugou.com/08bb2b3f6aef64873451b604670ee040.jpg", "http://wsing.bssdl.kugou.com/eccdba1f5eb5aede01ae2da1cfaa93a9.jpg", "http://wsing.bssdl.kugou.com/b565689c19b5f3043027c2298cb9f548.jpg"],
+         }
 
     }
 

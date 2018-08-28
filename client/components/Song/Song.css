@@ -30,7 +30,7 @@ body {
 }
 
 .song-head-wrap {
-    background: #415065;
+
 }
 
 .song-head {
@@ -63,11 +63,18 @@ body {
     margin: 5px;
 }
 
-.song-content {
+.song-root {
     background: #d7ecf1;
 
 }
+.song-content {
+    margin-left: 15%;
+}
+.song-right {
+    margin-top: 10px;
 
+
+}
 .lyric-wrap {
     margin-left: 25%;
     border: 2px;
@@ -95,7 +102,7 @@ body {
 
 }
 
-.comments-title p {
+.comments-title  {
     margin-left: 25%;
     font-size: 20px;
 }
@@ -139,4 +146,25 @@ body {
     height: 90px;
     width: 90px;
     border-radius: 50%;
+}
+.right-content {
+    border: 1px solid #177cb0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.song-right-row {
+    padding: 10px;
+}
+.artist-pic {
+    width: 80px;
+    height:80px;
+    border-radius: 50%;
+}
+.song-right-like {
+    border: 1px solid #177cb0;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.song-like-icon {
 }
