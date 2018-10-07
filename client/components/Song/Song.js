@@ -252,14 +252,9 @@ class Song extends React.Component {
 
                             <div className="song-right-like">
                                 <Layout.Row type="flex" justify="start" className="song-right-row">
-                                    <Layout.Col span="2">
-                                        <div className="grid-content bg-purple-dark">
-                                            <img className="song-like-icon" src={songLikeImg}/>
-                                        </div>
-                                    </Layout.Col>
                                     <Layout.Col span="12">
-                                        <div className="grid-content bg-purple-dark">
-                                           <span>你或许喜欢</span>
+                                        <div className="grid-content bg-purple-dark song-guess-like">
+                                           <span>猜你喜欢</span>
                                         </div>
                                     </Layout.Col>
                                 </Layout.Row>
@@ -270,30 +265,7 @@ class Song extends React.Component {
                                         </div>
                                     </Layout.Col>
                                 </Layout.Row>
-                                <Layout.Row className="song-right-row">
-                                    <Layout.Col span="24">
-                                        <div className="grid-content bg-purple-dark">
-                                            <Button type="primary">喜 欢</Button>
-                                        </div>
-                                    </Layout.Col>
-                                </Layout.Row>
-                                <Layout.Row type="flex" justify="center" className="song-right-row">
-                                    <Layout.Col span="4">
-                                        <div className="grid-content bg-purple-dark">
-                                            <span className="artist-name">123MV</span>
-                                        </div>
-                                    </Layout.Col>
-                                    <Layout.Col span="4">
-                                        <div className="grid-content bg-purple-dark">
-                                            <span className="artist-name">23MV</span>
-                                        </div>
-                                    </Layout.Col>
-                                    <Layout.Col span="4">
-                                        <div className="grid-content bg-purple-dark">
-                                            <span className="artist-name">12专辑</span>
-                                        </div>
-                                    </Layout.Col>
-                                </Layout.Row>
+
                             </div>
 
                         </div>
