@@ -48,7 +48,7 @@ class FriendLink extends React.Component {
                     <Layout.Col span="4">
                         <a href="https://www.yuanyintang.com/" title="源音塘" target="_blank">
                             <img className="friend-img"
-                                 src="https://www.yuanyintang.com/_nuxt/img/logo.4c90233.png"/>
+                                 src="https://www.yuanyintang.com/statics/picture/25/logo.png"/>
                         </a>
                     </Layout.Col>
 
