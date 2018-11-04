@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter} from 'react-router-dom'
 import {Button} from 'element-react'; //导入element-ui库
 import {Rate} from 'element-react'
+import {Dropdown} from 'element-react'
 import 'element-theme-default' //导入element-ui默认主题
 
 import './TopPage.css'
@@ -51,22 +52,20 @@ class TopPage extends React.Component {
     render() {
 
         return (
-            <div>
-                <div className="intro-block">
-                    <div className="block">
-                        <span className="demonstration">默认不区分颜色</span>
-                        <span className="wrapper">
-                            <Rate onChange={(val) => alert(val)}/>
-                        </span>
-                    </div>
-                    <div className="block">
-                        <span className="demonstration">区分颜色</span>
-                        <span className="wrapper">
-                        <Rate colors={['#99A9BF', '#F7BA2A', '#FF9900']}/>
-                        </span>
-                    </div>
-                </div>
-            </div>
+            <Dropdown menu={(
+                <Dropdown.Menu>
+                    <Dropdown.Item>黄金糕</Dropdown.Item>
+                    <Dropdown.Item>狮子头</Dropdown.Item>
+                    <Dropdown.Item>螺蛳粉</Dropdown.Item>
+                    <Dropdown.Item disabled>双皮奶</Dropdown.Item>
+                    <Dropdown.Item divided>蚵仔煎</Dropdown.Item>
+                </Dropdown.Menu>
+            )}
+            >
+      <span className="el-dropdown-link">
+        下拉菜单<i className="el-icon-caret-bottom el-icon--right"></i>
+      </span>
+            </Dropdown>
         )
     }
 
